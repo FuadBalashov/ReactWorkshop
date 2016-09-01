@@ -9,6 +9,21 @@ const Input = React.createClass({
   },
 
   render() {
+    const {label, value, onChange, onKeyPress} = this.props;
+    // We can now pass in event handlers to allow users to
+    // interact with this component
+    return (
+      <div>
+        <label htmlFor={label}>{label}</label>
+        <input
+          id={label}
+          type="text"
+          value={value}
+          onChange={onChange}
+          onKeyPress={onKeyPress}
+        />
+      </div>
+    );
   }
 });
 
