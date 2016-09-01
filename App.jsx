@@ -1,5 +1,6 @@
 import React from 'react';
 import * as firebase from 'firebase'; // Import Firebase library
+import Message from './components/Message.jsx';
 
 // Data to authenticate Firebase
 const firebaseConfig = {
@@ -51,7 +52,7 @@ const App = React.createClass({
   },
 
   renderMessageDiv(message) {
-    return <p key={message.key}>{message.name}: {message.message}</p>;
+    return <Message key={message.key} message={message}/>;
   },
 
   render() {
