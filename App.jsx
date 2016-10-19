@@ -51,7 +51,7 @@ const App = React.createClass({
   },
 
   renderMessageDiv(message) {
-    return <p></p>;
+    return <p key={message.key}>{message.name}: {message.message}</p>;
   },
 
   render() {
@@ -62,6 +62,9 @@ const App = React.createClass({
     return (
       <div>
         <h2>ChatMe</h2>
+        <div>
+          {messageDivs}
+        </div>
       </div>
     );
   }
