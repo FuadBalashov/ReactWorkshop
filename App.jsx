@@ -1,5 +1,6 @@
 import React from 'react';
 import Firebase from './firebase-wrapper'; // Import Firebase library
+import Message from './components/Message.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class App extends React.Component {
   }
 
   renderMessageDiv(message) {
-    return <p key={message.key}>{message.name}: {message.message}</p>;
+    return <Message key={message.key} message={message}/>;
   }
 
   render() {
