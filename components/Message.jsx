@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { emojify } from 'node-emoji';
 
 class Message extends React.Component {
   // Setting propTypes ensure that your component is used correctly
@@ -12,7 +13,9 @@ class Message extends React.Component {
     // the message object
     const {name, message} = this.props.message;
 
-    return <p>{name}: {message}</p>;
+    const emojifiedString = emojify(message);
+
+    return <p>{name}: {emojifiedString}</p>;
   }
 }
 
