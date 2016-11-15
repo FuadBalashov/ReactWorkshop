@@ -7,6 +7,11 @@ const Message = React.createClass({
   },
 
   render() {
+    // Destructuring pulls the different fields from
+    // the message object
+    const {name, message} = this.props.message;
+
+    return <p>{name}: {message}</p>;
   }
 });
 

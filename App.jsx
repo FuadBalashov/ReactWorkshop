@@ -1,5 +1,6 @@
 import React from 'react';
 import Firebase from './firebase-wrapper'; // Import Firebase library
+import Message from './components/Message.jsx';
 
 const App = React.createClass({
   getInitialState() {
@@ -19,7 +20,7 @@ const App = React.createClass({
   },
 
   renderMessageDiv(message) {
-    return <p key={message.key}>{message.name}: {message.message}</p>;
+    return <Message key={message.key} message={message}/>;
   },
 
   render() {
