@@ -9,24 +9,9 @@ const firebaseConfig = {
 };
 // Initializing Firebase
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-let mockKey = 0;
-const mockMessages = [{
-  name: 'HAL',
-  message: 'Good afternoon, everyone.',
-  key: mockKey++
-},
-{
-  name: 'HAL',
-  message: 'I am a HAL 9000 computer',
-  key: mockKey++
-}];
 
 const Firebase = {
   turnOn(setState) {
-    setState({
-      messages: mockMessages
-    });
-    /*
     // gets reference to Firebase database and listens for changes
     this.messagesRef = firebaseApp.database().ref('messages');
 
@@ -49,17 +34,14 @@ const Firebase = {
         messages: newMessages
       });
     });
-    */
   },
 
   turnOff() {
-    // this.messagesRef.off();
+    this.messagesRef.off();
   },
 
   sendMessage(message) {
-    // this.messagesRef.push(message);
-    message.key = mockKey++;
-    mockMessages.push(message);
+    this.messagesRef.push(message);
   }
 };
 
