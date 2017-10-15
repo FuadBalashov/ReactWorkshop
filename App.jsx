@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   renderMessageDiv(message) {
-    return <p />;
+    return <p key={message.key}>{message.name}: {message.message}</p>;
   }
 
   render() {
@@ -31,6 +31,9 @@ class App extends React.Component {
     return (
       <div>
         <h2>ChatMe</h2>
+        <div>
+          {messageDivs}
+        </div>
       </div>
     );
   }
